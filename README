@@ -1,0 +1,19 @@
+Algoritmi Paraleli si Distribuiti
+Tema 3 - Calcul Paralel folosind MPI
+Nume - Irimia Ana Mirela
+Grupa - 333CC
+
+	Procesul master (cu rank-ul 0) citeste datele de intrare din fisier,
+dupa care face broadcast cu aceste date catre celelelalte procese folosind
+doua buffere unul pentru datele de tip double si unul pentru datele de tip
+integer.
+	Fiecare proces isi va salva datele in variabilele locale urmand sa
+calculeze fiecare dimensiunile matricei si numarul de coloane pe care il
+are de prelucrat reprezentat prin variabila width_proc.
+	In functie de tipul multimii, fiecare proces va aplica algoritmul din 
+enunt pentru a calcula un numar de valori din matricea finala egal cu 
+inaltimea matricii inmultita cu numarul de coloane prelucrat de proces.
+	Procesul master va strange valorile calculate de fiecare proces 
+intr-un vector dupa care va aseza valorile in ordinea corecta in matricea
+finala. Procesul master va face si scrierea in fisierul de iesire in
+formatul corespunzator imaginilor de tip PGM.
